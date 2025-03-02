@@ -64,6 +64,28 @@ public class UserController {
         model.addAttribute("users",users);
         return "users";
 
+    }
+
+    @GetMapping("/if-unless")
+    public String ifUnless(Model model){
+        User admin = new User("admin","admin@gmil.com","admin", "male");
+        User ramesh = new User("ramesh","ramesh@gamil.com","user", "male");
+        User meena = new User("meena","meena@gmail.com","user","female");
+        List<User> users = new ArrayList<>();
+        users.add(admin);
+        users.add(ramesh);
+        users.add(meena);
+        model.addAttribute("users",users);
+        return "if-unless";
+    }
+
+    @GetMapping("switch-case")
+    public String switchCase(Model model){
+        User user = new User("navod", "navod@email.com", "admin", "male");
+        model.addAttribute("user",user);
+        return "switch-case";
 
     }
+
+
 }
